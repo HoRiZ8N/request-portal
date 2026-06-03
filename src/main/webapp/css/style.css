@@ -1,0 +1,367 @@
+/* ── Reset & base ─────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f0f2f5;
+    color: #333;
+    min-height: 100vh;
+}
+
+/* ── Navbar ───────────────────────────────────────────────────────────────── */
+nav {
+    background: #1e293b;
+    color: #fff;
+    padding: 0 2rem;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 6px rgba(0,0,0,.25);
+}
+
+.nav-brand {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: .3px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.nav-links a,
+.nav-links button {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: .875rem;
+    padding: .35rem .75rem;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background .15s, color .15s;
+}
+
+.nav-links a:hover,
+.nav-links button:hover { background: rgba(255,255,255,.1); color: #fff; }
+
+.nav-links .nav-active { background: rgba(255,255,255,.12); color: #fff; }
+
+.nav-user {
+    font-size: .8rem;
+    color: #94a3b8;
+    margin-right: .5rem;
+}
+
+/* ── Container ────────────────────────────────────────────────────────────── */
+.container {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* ── Card ─────────────────────────────────────────────────────────────────── */
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.08), 0 4px 16px rgba(0,0,0,.05);
+    padding: 2rem;
+}
+
+/* ── Page header ──────────────────────────────────────────────────────────── */
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.page-header h1 {
+    font-size: 1.4rem;
+    color: #1e293b;
+}
+
+/* ── Form ─────────────────────────────────────────────────────────────────── */
+.form-group { margin-bottom: 1.2rem; }
+
+.form-group label {
+    display: block;
+    font-size: .8rem;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: .4rem;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group textarea {
+    width: 100%;
+    padding: .6rem .85rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: .95rem;
+    font-family: inherit;
+    color: #1e293b;
+    transition: border-color .15s, box-shadow .15s;
+    background: #fafafa;
+}
+
+.form-group textarea { height: 130px; resize: vertical; }
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(59,130,246,.15);
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────────────── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    padding: .5rem 1.1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: .875rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity .15s, transform .1s;
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn-primary  { background: #3b82f6; color: #fff; }
+.btn-primary:hover  { background: #2563eb; }
+
+.btn-success  { background: #22c55e; color: #fff; }
+.btn-success:hover  { background: #16a34a; }
+
+.btn-danger   { background: #ef4444; color: #fff; }
+.btn-danger:hover   { background: #dc2626; }
+
+.btn-outline  { background: transparent; color: #475569; border: 1px solid #cbd5e1; }
+.btn-outline:hover  { background: #f1f5f9; }
+
+.btn-sm { padding: .3rem .7rem; font-size: .8rem; }
+
+/* ── Table ────────────────────────────────────────────────────────────────── */
+.table-wrap { overflow-x: auto; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .9rem;
+}
+
+thead th {
+    background: #f8fafc;
+    color: #64748b;
+    font-size: .75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: .75rem 1rem;
+    text-align: left;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+tbody td {
+    padding: .85rem 1rem;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+    color: #334155;
+}
+
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover td { background: #f8fafc; }
+
+.col-id      { width: 52px; }
+.col-name    { min-width: 140px; }
+.col-email   { min-width: 170px; }
+.col-msg     { min-width: 200px; }
+.col-status  { width: 110px; }
+.col-date    { width: 140px; white-space: nowrap; }
+.col-actions { width: 170px; text-align: right; }
+
+.msg-cell {
+    max-width: 240px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.actions-cell { display: flex; gap: .4rem; justify-content: flex-end; }
+
+/* ── Status badges ────────────────────────────────────────────────────────── */
+.badge {
+    display: inline-block;
+    padding: .25rem .65rem;
+    border-radius: 20px;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .3px;
+    text-transform: uppercase;
+}
+
+.badge-PENDING  { background: #fef9c3; color: #713f12; }
+.badge-APPROVED { background: #dcfce7; color: #14532d; }
+.badge-REJECTED { background: #fee2e2; color: #7f1d1d; }
+
+/* ── Alerts ───────────────────────────────────────────────────────────────── */
+.alert {
+    padding: .8rem 1rem;
+    border-radius: 6px;
+    font-size: .9rem;
+    margin-bottom: 1.25rem;
+}
+
+.alert-error   { background: #fee2e2; color: #7f1d1d; border-left: 4px solid #ef4444; }
+.alert-success { background: #dcfce7; color: #14532d; border-left: 4px solid #22c55e; }
+.alert-info    { background: #dbeafe; color: #1e3a5f; border-left: 4px solid #3b82f6; }
+
+/* ── Empty state ──────────────────────────────────────────────────────────── */
+.empty-state {
+    text-align: center;
+    padding: 3.5rem 1rem;
+    color: #94a3b8;
+}
+
+.empty-state p { margin-top: .5rem; font-size: .9rem; }
+
+/* ── Login page ───────────────────────────────────────────────────────────── */
+.login-wrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f2f5;
+}
+
+.login-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,.1);
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 380px;
+}
+
+.login-logo {
+    text-align: center;
+    margin-bottom: 1.75rem;
+}
+
+.login-logo h1 {
+    font-size: 1.4rem;
+    color: #1e293b;
+    margin-top: .5rem;
+}
+
+.login-logo .logo-icon {
+    display: inline-flex;
+    width: 48px; height: 48px;
+    background: #3b82f6;
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.login-card .btn-primary { width: 100%; justify-content: center; padding: .7rem; }
+
+.login-hint {
+    margin-top: 1.25rem;
+    font-size: .78rem;
+    color: #94a3b8;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* ── Misc ─────────────────────────────────────────────────────────────────── */
+.text-muted { color: #94a3b8; font-size: .85rem; }
+.mt-1 { margin-top: .5rem; }
+
+/* ── Admin request cards ──────────────────────────────────────────────────── */
+.req-list {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+}
+
+.req-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.07), 0 2px 8px rgba(0,0,0,.04);
+    overflow: hidden;
+}
+
+.req-card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem .75rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.req-card-who {
+    display: flex;
+    flex-direction: column;
+    gap: .15rem;
+}
+
+.req-name {
+    font-weight: 600;
+    color: #1e293b;
+    font-size: .95rem;
+}
+
+.req-email {
+    font-size: .82rem;
+    color: #64748b;
+}
+
+.req-card-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: .3rem;
+    flex-shrink: 0;
+}
+
+.req-card-body {
+    padding: .75rem 1.25rem;
+}
+
+.req-message {
+    color: #334155;
+    font-size: .9rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin: 0;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.req-card-foot {
+    display: flex;
+    gap: .5rem;
+    padding: .75rem 1.25rem;
+    background: #f8fafc;
+    border-top: 1px solid #f1f5f9;
+}
